@@ -1,4 +1,4 @@
 angular.module('Eparts').component('view', {
-  templateUrl: 'angular/view/view.html',
+  templateUrl: 'angular/views/tela.html',
   controller: 'mainController',
 });

@@ -6,7 +6,7 @@ require('./ellipsisFilter');
 describe('Ellipsis Filter', function () {
 
   beforeEach(function () {
-    angular.mock.module('ePartsTest');
+    angular.mock.module('eParts');
   });
 
   var _filter;

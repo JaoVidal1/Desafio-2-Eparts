@@ -1,7 +1,7 @@
 require('angular');
 require('angular-mocks');
 require('../app');
-require('./userController');
+require('./jogadorController');
 
 describe('Jogador Controller', function () {
   beforeEach(function () {

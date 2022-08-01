@@ -1,7 +1,7 @@
 require('angular');
 require('angular-mocks');
 require('../app');
-require('../values/configValue');
+require('../values/configValues');
 require('./jogadorServices');
 
 describe('Jogador Service', function () {
@@ -18,14 +18,14 @@ describe('Jogador Service', function () {
   }));
   describe('Jogador Service', function () {
     it('receber  os jogadores', async function () {
-      httpBackend.whenGET(configs.baseUrl + '/jogadores').respond(200, [
+      httpBackend.whenGET(configs.baseUrl + '/jler').respond(200, [
         {
           name: 'João',
           coins: 19,
         },
       ]);
 
-      var res = _jogadorServices.readJogador();
+      var res = _jogadorServices.leituraJogador();
       httpBackend.flush();
       res.then(function (response) {
         const result = response.data;
@@ -35,9 +35,9 @@ describe('Jogador Service', function () {
     });
 
     it('verificar  a função post ', async function () {
-      httpBackend.whenPOST(configs.baseUrl + '/jogadores').respond(200);
+      httpBackend.whenPOST(configs.baseUrl + '/jcria').respond(200);
 
-      var res = _jogadoresServices.createJogador();
+      var res = _jogadoresServices.criaJogador();
       httpBackend.flush();
       res.then(function (response) {
         const result = response.data;

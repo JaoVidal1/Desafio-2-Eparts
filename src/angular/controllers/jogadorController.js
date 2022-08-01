@@ -4,8 +4,8 @@ angular
     var changeJogador = '';
     $scope.newUser = {};
     $scope.users = [];
-    function loadUsers() {
-      jogador.readUsers().then((res) => {
+    function loadJogadores() {
+      jogador.readJogador().then((res) => {
         $scope.users = res.data;
       });
     }
@@ -29,7 +29,7 @@ angular
     $scope.saveJogador = function (jogador) {
         var sideToast = new bootstrap.Toast(document.getElementById('sideToast'));
         if ($scope.novoJogador) {
-          jogadorApi.createJogador(jogador).then(() => {
+          jogadorApi.criaJogador(jogador).then(() => {
             delete $scope.jogador;
             loadJogadores();
             $scope.toastHeader = 'toast-header mainBlue text-white';
@@ -46,7 +46,7 @@ angular
           });
         } else {
           jogadorAPI.updateJogador(changeJogador._id, jogador).then(() => {
-            loadUsers();
+            loadJogadores();
             $scope.toastHeader = 'toast-header mainBlue text-white';
             $scope.toastBody = {
               '--bs-bg-opacity': '.9',
@@ -85,7 +85,7 @@ angular
       };
       $scope.JogadorDelete = function () {
         var sideToast = new bootstrap.Toast(document.getElementById('sideToast'));
-        JogadorApi.userDelete(changeJogador._id).then((res) => {
+        JogadorApi.JogadorDelete(changeJogador._id).then((res) => {
           $scope.jogadores = $scope.jogadores.filter(function (jogador) {
             if (jogador._id !== changeJogador._id) return jogador;
           });
@@ -103,5 +103,5 @@ angular
           $('#delete').modal('hide');
         });
       };
-      loadUsers();
+      loadJogadores();
     });

@@ -1,12 +1,12 @@
 angular.module("eParts").factory("jogadorAPI", ($http, config)=>{
     const _get = function(){
         return $http({
-            url: config.baseUrl + '/jogadores',
+            url: config.baseUrl + '/jler',
             method: 'GET'
         })
     }
     const _post = function(jogador){
-        return $http.post(config.baseUrl + "/jogadores", jogador)
+        return $http.post(config.baseUrl + "/jcria", jogador)
     }
     const _delete = function(jogadorID){
         return $http.delete(config.baseUrl + "/jogadores/" + jogadorID)
@@ -15,9 +15,9 @@ angular.module("eParts").factory("jogadorAPI", ($http, config)=>{
         return $http.put(config.baseUrl + "/jogadores/" + jogadorID, update)
     }
     return {
-        readJogador : _get,
-        createJogador : _post,
-        deleteJogador : _delete,
-        updateJogador : _put
+        lerJogador : _get,
+        criaJogador : _post,
+        excluiJogador : _delete,
+        atualizarJogador : _put
     }
 })
