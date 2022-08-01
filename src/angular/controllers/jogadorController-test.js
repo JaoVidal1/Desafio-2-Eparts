@@ -36,6 +36,7 @@ describe('Jogador Controller', function () {
       spy.mockReturnValue(mockElement);
     });
   });
+  
   describe('Order controller', function () {
     it('retornar os critérios de ordenação do nome', function () {
       const vm = newControllerInstance();

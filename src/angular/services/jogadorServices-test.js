@@ -4,6 +4,7 @@ require('../app');
 require('../values/configValues');
 require('./jogadorServices');
 
+
 describe('Jogador Service', function () {
   beforeEach(function () {
     angular.mock.module('Eparts');

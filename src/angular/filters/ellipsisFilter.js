@@ -5,4 +5,5 @@ angular.module('Eparts').filter('ellipsis', function () {
     var output = input.substring(0, size || 2) + '...';
     return output;
   };
+  
 });

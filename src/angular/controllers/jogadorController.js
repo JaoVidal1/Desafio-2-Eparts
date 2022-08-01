@@ -79,6 +79,7 @@ angular
             $scope.orderDirection = true
         }
     };
+    
     $scope.delete = function (jogador) {
         changeJogador = jogador;
         $scope.deleteName = jogador.name;

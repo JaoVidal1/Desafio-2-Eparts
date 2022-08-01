@@ -5,6 +5,7 @@ angular.module("eParts").factory("jogadorAPI", ($http, config)=>{
             method: 'GET'
         })
     }
+    
     const _post = function(jogador){
         return $http.post(config.baseUrl + "/jcria", jogador)
     }

@@ -9,6 +9,7 @@ describe('Ellipsis Filter', function () {
     angular.mock.module('eParts');
   });
 
+  
   var _filter;
   var configs, httpBackend, rootScope
   beforeEach(inject(($filter) => {
