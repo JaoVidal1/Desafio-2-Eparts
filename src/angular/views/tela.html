@@ -1,8 +1,8 @@
 <nav class="navbar fixed-top navbar-light" style="background-color: #0B3C70">
     <div class="container-fluid">
       <a class="navbar-brand">
-        <img class="ms-4" src="/src/img/eparts.png" width="60" height="30"></img>
-        <i class="ms-1 text-white fontNavBar">Desafio Estagiários 01</i>
+        <img class="ms-4" src="\src\img\eparts.png" width="60" height="30"></img>
+        <i class="ms-1 text-white fontNavBar">Desafio </i>
       </a>
     </div>
   </nav>
@@ -54,10 +54,10 @@
   
       <tbody ng-repeat="user in users | orderBy:orderCriterion:orderDirection">
         <tr>
-          <td data-toggle="tooltip" data-placement="top" title="{{user.name}}">{{user.name | ellipsis:20}}</td>
-          <td class="tblCenterAlign">{{user.coins}}</td>
-          <td class="tblCenterAlign">{{user.medals}}</td>
-          <td class="tblCenterAlign">{{user.trophies}}</td>
+          <td data-toggle="tooltip" data-placement="top" title="{{user.name}}">{{jogador.name | ellipsis:20}}</td>
+          <td class="tblCenterAlign">{{jogador.coins}}</td>
+          <td class="tblCenterAlign">{{jogador.medals}}</td>
+          <td class="tblCenterAlign">{{jogador.trophies}}</td>
           <td class="tblRightAlign">
             <i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#myModal" ng-click="updateModal(user)"></i>
             <i class="bi bi-trash-fill" data-bs-toggle="modal" data-bs-target="#delete" ng-click="delete(user)"></i>
@@ -83,7 +83,7 @@
               <input type="text" class="form-control" ng-model="user.name" ng-required="true" id="nameUser">
             </div>
   
-            
+
             <div class="mb-3">
               <label for="coinsUser" class="form-label">Moedas</label>
               <input type="number" class="form-control" ng-model="user.coins" ng-required="true" id="coinsUser">
