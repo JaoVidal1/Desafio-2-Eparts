@@ -11,10 +11,10 @@ describe('Jogador Controller', function () {
   const fakePromise = () => new Promise((resolve) => resolve);
 
   const _JogadorApi = {
-    readJogador: fakePromise,
-    createJogador: fakePromise,
-    userJogador: fakePromise,
-    updateJogador: fakePromise,
+    leituraJogador: fakePromise,
+    criaJogador: fakePromise,
+    removerJogador: fakePromise,
+    atualizaJogador: fakePromise,
   };
 
   let controller;

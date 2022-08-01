@@ -6,7 +6,6 @@
       </a>
     </div>
   </nav>
-  
   <div class="border border-1 rounded-3 mt-6 mx-2 px-3 pt-3 pb-2 bg-white shadow">
     <div class="row">
       <div class="col-sm-10 fontAvayoBold">
@@ -52,15 +51,15 @@
       </tr>
   
   
-      <tbody ng-repeat="user in users | orderBy:orderCriterion:orderDirection">
+      <tbody ng-repeat="jogador in jogadores | orderBy:orderCriterion:orderDirection">
         <tr>
-          <td data-toggle="tooltip" data-placement="top" title="{{user.name}}">{{jogador.name | ellipsis:20}}</td>
+          <td data-toggle="tooltip" data-placement="top" title="{{jogador.name}}">{{jogador.name | ellipsis:20}}</td>
           <td class="tblCenterAlign">{{jogador.coins}}</td>
           <td class="tblCenterAlign">{{jogador.medals}}</td>
           <td class="tblCenterAlign">{{jogador.trophies}}</td>
           <td class="tblRightAlign">
-            <i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#myModal" ng-click="updateModal(user)"></i>
-            <i class="bi bi-trash-fill" data-bs-toggle="modal" data-bs-target="#delete" ng-click="delete(user)"></i>
+            <i class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#myModal" ng-click="updateModal(jogador)"></i>
+            <i class="bi bi-trash-fill" data-bs-toggle="modal" data-bs-target="#delete" ng-click="delete(jogador)"></i>
           </td>
         </tr>
       </tbody>
@@ -73,29 +72,29 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title text-white" id="modalTitle">{{modalTitle}}</h4>
-          <button type="button" class="btn-close btn-close-white" ng-click="newUser = false" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" ng-click="newJogador = false" data-bs-dismiss="modal"></button>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form class="mt-3 mb-4 p-1">
             <div class="mb-3">
-              <label for="nameUser" class="form-label">Nome</label>
-              <input type="text" class="form-control" ng-model="user.name" ng-required="true" id="nameUser">
+              <label for="nameJogador" class="form-label">Nome</label>
+              <input type="text" class="form-control" ng-model="jogador.name" ng-required="true" id="nameJogador">
             </div>
   
 
             <div class="mb-3">
-              <label for="coinsUser" class="form-label">Moedas</label>
-              <input type="number" class="form-control" ng-model="user.coins" ng-required="true" id="coinsUser">
+              <label for="coinsJogador" class="form-label">Moedas</label>
+              <input type="number" class="form-control" ng-model="jogador.coins" ng-required="true" id="coinsJogador">
             </div>
           </form>
           <div class="d-grid gap-2">
-            <button class="btn btn-success" ng-disabled="formsUser.$invalid" ng-click="saveUser(user)" id="btnSave" type="button">Salvar</button>
+            <button class="btn btn-success" ng-disabled="formsUser.$invalid" ng-click="saveJogador(jogador)" id="btnSave" type="button">Salvar</button>
           </div>
         </div>
       </div>
       <div class="d-grid gap-2">
-        <button class="btn btn-success" ng-disabled="formsUser.$invalid" ng-click="closeUser(user)" id="btnSave" type="button">Fechar</button>
+        <button class="btn btn-success" ng-disabled="formsUser.$invalid" ng-click="closeJogador(jogador)" id="btnSave" type="button">Fechar</button>
       </div>
     </div>
   </div>
@@ -111,7 +110,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title" id="modalTitle">{{modalTitle}}</h4>
-          <button type="button" class="btn-close btn-close-white" ng-click="newUser = false" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" ng-click="newJogador = false" data-bs-dismiss="modal"></button>
         </div>
   
         <div class="modal-body">
@@ -119,17 +118,17 @@
             <form class="form-horizontal" role="form">
               <div class="mb-3">
                 <label for="nameModal" class="form-label">Nome</label>
-                <input type="text" class="form-control" ng-model="updateUser.name" ng-required="true" id="nameModal">
+                <input type="text" class="form-control" ng-model="atualizaJogador.name" ng-required="true" id="nameModal">
               </div>
   
               <div class="mb-3">
                 <label for="coinsModal" class="form-label">Moedas</label>
-                <input type="number" class="form-control" ng-model="updateUser.coins" ng-required="true" id="coinsModal">
+                <input type="number" class="form-control" ng-model="atualizaJogador.coins" ng-required="true" id="coinsModal">
               </div>
             </form>
 
             <div class="d-grid gap-2">
-              <button type="submit" class="btn btn-success" ng-disabled="formsUser.$invalid" ng-click="saveUser(user)" id="btnSave" type="button" data-dismiss="modal">Salvar</button>
+              <button type="submit" class="btn btn-success" ng-disabled="formsUser.$invalid" ng-click="saveJogador(jogador)" id="btnSave" type="button" data-dismiss="modal">Salvar</button>
             </div>
           </div>
         </div>
@@ -159,7 +158,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-          <button type="button" ng-click="userDelete()" class="btn btn-danger">Excluir</button>
+          <button type="button" ng-click="excluiJogador()" class="btn btn-danger">Excluir</button>
         </div>
       </div>
     </div>

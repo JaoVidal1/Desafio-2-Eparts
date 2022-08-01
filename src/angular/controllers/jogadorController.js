@@ -5,7 +5,7 @@ angular
     $scope.newUser = {};
     $scope.users = [];
     function loadJogadores() {
-      jogador.readJogador().then((res) => {
+      jogador.leituraJogador().then((res) => {
         $scope.users = res.data;
       });
     }
@@ -45,7 +45,7 @@ angular
             $('#mainModal').modal('hide');
           });
         } else {
-          jogadorAPI.updateJogador(changeJogador._id, jogador).then(() => {
+          jogadorAPI.atualizaJogador(changeJogador._id, jogador).then(() => {
             loadJogadores();
             $scope.toastHeader = 'toast-header mainBlue text-white';
             $scope.toastBody = {
@@ -84,9 +84,9 @@ angular
         changeJogador = jogador;
         $scope.deleteName = jogador.name;
       };
-      $scope.JogadorDelete = function () {
+      $scope.excluiJogador = function () {
         var sideToast = new bootstrap.Toast(document.getElementById('sideToast'));
-        JogadorApi.JogadorDelete(changeJogador._id).then((res) => {
+        JogadorApi.excluiJogador(changeJogador._id).then((res) => {
           $scope.jogadores = $scope.jogadores.filter(function (jogador) {
             if (jogador._id !== changeJogador._id) return jogador;
           });

@@ -19,6 +19,6 @@ angular.module("eParts").factory("jogadorAPI", ($http, config)=>{
         lerJogador : _get,
         criaJogador : _post,
         excluiJogador : _delete,
-        atualizarJogador : _put
+        atualizaJogador : _put
     }
 })
