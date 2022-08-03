@@ -2,11 +2,11 @@ angular
   .module('Eparts')
   .controller('mainController', function ($scope, jogador) {
     var changeJogador = '';
-    $scope.newUser = {};
-    $scope.users = [];
+    $scope.newJogador = {};
+    $scope.jogadoress = [];
     function loadJogadores() {
       jogador.leituraJogador().then((res) => {
-        $scope.users = res.data;
+        $scope.jogadores = res.data;
       });
     }
     $scope.modal = function () {
@@ -70,11 +70,11 @@ angular
             $scope.orderCriterion = 'name'
             $scope.orderDirection = true
         }
-        else if(option == 'Menos moedas '){            
+        else if(option == 'Moedas Desc '){            
             $scope.orderCriterion = 'coins'
             $scope.orderDirection = false
         }
-        else if(option == 'Mais moedas  '){            
+        else if(option == 'Moedas Asc  '){            
             $scope.orderCriterion = 'coins'
             $scope.orderDirection = true
         }
@@ -82,7 +82,7 @@ angular
     
     $scope.delete = function (jogador) {
         changeJogador = jogador;
-        $scope.deleteName = jogador.name;
+        $scope.deleteName = jogador.nome;
       };
       $scope.excluiJogador = function () {
         var sideToast = new bootstrap.Toast(document.getElementById('sideToast'));
